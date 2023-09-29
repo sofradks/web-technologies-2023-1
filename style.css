@@ -1,0 +1,62 @@
+.base{
+    margin-left: 10%;
+    margin-right: 10%;
+    position:relative;
+    background-color: green;
+}
+.qwerty{
+    margin-top: 5%;
+    max-width: 30%;
+    overflow: hidden;
+    background-color: brown;
+}
+.qwertyForm{
+    background-color:darkorange;
+}
+.gone{
+    margin-left: 50pt;
+    max-width: 40%;
+    display: inline-block;
+    position: absolute;
+    background-color: brown;
+}
+.isix{
+    margin-right: 10pt;
+    margin-left: 400pt;
+    max-width: 10%;
+    display: inline-block;
+    position:relative;
+    background-color:brown;
+}
+.lyric{
+    max-width: 80%;
+    background-color: brown;
+    margin-left: 2%;
+}
+.insertText{
+    margin: 5%;
+    background-color: brown;
+}
+.count{
+    background-color: brown;
+    margin: 2%;
+    max-width: 40%;
+}
+.nightcore{
+    background-color: brown;
+    margin: 2%;
+    max-width: 30%;
+}
+.nightcoreLeft{
+    margin-left: 50pt;
+    display: inline-block;
+}
+.nightcoreRight{
+    margin-left: 200pt;
+    display: inline-block;
+}
+.whatsNext{
+    max-width: 50%;
+    background-color: brown;
+    margin-left: 2%;
+}
