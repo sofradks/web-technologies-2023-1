@@ -14,11 +14,13 @@ p {
     font-size: 16px;
     line-height: 26px;
     color: #1F3F68;
+    font-family: "Better";
 }
 
 h1 {
     font-size: 64px;
     color: #1F3F68;
+    font-family: "Better";
 }
 
 h2 {
@@ -65,19 +67,24 @@ form {
 menu.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-
+    
     background: rgb(98,154,155);
     background: linear-gradient(rgba(198,254,255,1) 0%, rgba(98,154,155,1)  68%);
 }
 
 menu.breadcrumb li {
     display: inline;
+    padding-right: 10px;
+    margin-left: 10px;
+    border-right: 3px solid black;    
+    border-radius: 0px 30px 30px 0px;
+    box-shadow: 3px 0px black;
 }
 
 menu.breadcrumb li+li:before {
     padding: 8px;
     color: black;
-    content: ")";
+    
 }
 
 menu.breadcrumb li a {

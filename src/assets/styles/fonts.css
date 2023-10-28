@@ -21,3 +21,16 @@
          url("/static/fonts/Inter-Regular.woff2") format("woff");
     font-weight: 400;
 }
+
+@font-face {
+    font-family: "Better";
+    src: local('Better'), local('Better-vrc'), local('Better Vrc'),
+        url("/static/fonts/better-vcr4.0.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "StoreIcons";
+    src:url("/static/fonts/StoreIcons.ttf") format("truetype");
+    font-weight: normal;
+}
