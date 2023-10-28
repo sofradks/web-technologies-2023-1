@@ -29,9 +29,10 @@
     background-color:brown;
 }
 .lyric{
-    max-width: 80%;
+    max-width: 30%;
     background-color: brown;
     margin-left: 2%;
+    display: inline-block;
 }
 .insertText{
     margin: 5%;
@@ -56,12 +57,65 @@
     display: inline-block;
 }
 .whatsNext{
-    max-width: 50%;
+    max-width: 40%;
     background-color: brown;
     margin-left: 2%;
+    display: inline-block;
+    
+}
+.whatsNextImage{
+    margin: 5px;
 }
 .help{
     max-width: 50%;
     background-color: brown;
     margin-left: 2%;
+}
+.isixInside{
+    background-color: aqua;
+    margin: 5px;
+}
+.lyricInside{
+    background-color: aqua;
+    margin: 5px;
+}
+.insertTextInside{
+    background-color: aqua;
+    margin: 5px;
+    display: inline-block;
+}
+.whatsNextLeft{
+    margin-right: 30%;
+}
+.whatsNextInside{
+    background-color: aqua;
+    margin: 5px;
+}
+.text{
+    max-width: 45%;
+    width: 100%;
+    background-color: brown;
+    margin: 2%;
+    display: inline-block;
+}
+.textInside{
+    background-color: aqua;
+    margin: 5px;
+}
+.textOutside{
+    max-width: 90%;
+    width: 100%;
+    background-color: brown;
+    margin: 2%;
+}
+.footer{
+    background-color: brown;
+    margin: 5px;
+    width: 99%;
+}
+.footerInside{
+    display: inline-block;
+    background-color: aqua;
+    margin: 5px;
+    width: 23%;
 }
