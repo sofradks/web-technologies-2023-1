@@ -1,121 +1,257 @@
-.base{
-    margin-left: 10%;
-    margin-right: 10%;
-    position:relative;
-    background-color: green;
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("Inter-Regular.ttf") format("ttf")
 }
-.qwerty{
-    margin-top: 5%;
-    max-width: 30%;
-    overflow: hidden;
-    background-color: brown;
+@font-face {
+    font-family: "SF Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url("SFProText-Regular.ttf") format("ttf"),
+         url("SFProText-Medium.ttf") format("ttf")
 }
-.qwertyForm{
-    background-color:darkorange;
+
+header {
+    background-color:  white;
+    width: 1114px;
+    height: 56px;
+    margin-top: 24px; 
+    margin-left: 108px;   
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px 0px 24px;
+    position: fixed;
+    z-index: 1;
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
 }
-.gone{
-    margin-left: 50pt;
-    max-width: 40%;
-    display: inline-block;
-    position: absolute;
-    background-color: brown;
+
+header ol, header ul{
+    display:  flex;
+    align-items: center;
+    list-style: none;
 }
-.isix{
-    margin-right: 10pt;
-    margin-left: 400pt;
-    max-width: 10%;
-    display: inline-block;
-    position:relative;
-    background-color:brown;
+header li{
+    margin-right: 12px;
+    margin-left: 12px;
 }
-.lyric{
-    max-width: 30%;
-    background-color: brown;
-    margin-left: 2%;
-    display: inline-block;
+header ol a{
+    color: black;
+    text-decoration: none;
 }
-.insertText{
-    margin: 5%;
-    background-color: brown;
+header ul li{
+    color: #2D66EE;
+    display: flex;
+    align-items: center;
 }
-.count{
-    background-color: brown;
-    margin: 2%;
-    max-width: 40%;
+header ul img{
+    margin-right: 4px;
 }
-.nightcore{
-    background-color: brown;
-    margin: 2%;
-    max-width: 30%;
+header ul a{
+    text-decoration: none;
 }
-.nightcoreLeft{
-    margin-left: 50pt;
-    display: inline-block;
+header span{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 700;
+    color: #2D66EE;
 }
-.nightcoreRight{
-    margin-left: 200pt;
-    display: inline-block;
+
+body{
+    background-color: #F2F4F7;
 }
-.whatsNext{
-    max-width: 40%;
-    background-color: brown;
-    margin-left: 2%;
-    display: inline-block;
+
+footer{
+    background-color: #101828;
+    width: 1224px;
+    height: 222px;
+    margin-left: 108px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44%;
     
 }
-.whatsNextImage{
-    margin: 5px;
+
+footer > div{
+    margin: 25px 0px 20px 0px;
 }
-.help{
-    max-width: 50%;
-    background-color: brown;
-    margin-left: 2%;
+
+footer span{
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 18px;
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
 }
-.isixInside{
-    background-color: aqua;
-    margin: 5px;
+
+.footer_h{
+    font-family: "Inter";
 }
-.lyricInside{
-    background-color: aqua;
-    margin: 5px;
+
+footer p{
+    color: white;
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
 }
-.insertTextInside{
-    background-color: aqua;
-    margin: 5px;
-    display: inline-block;
+
+.contacts{
+    display: grid;
+    grid-template-columns: repeat(4, 300px); 
+    grid-template-rows: auto;
 }
-.whatsNextLeft{
-    margin-right: 30%;
+
+.contact-column li{
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
 }
-.whatsNextInside{
-    background-color: aqua;
-    margin: 5px;
+
+.contact-column span{
+    color: #98A2B3;  
+    font-size: 14px;
+    font-weight: 500;
 }
-.text{
-    max-width: 45%;
+
+.about-faq{
     width: 100%;
-    background-color: brown;
-    margin: 2%;
-    display: inline-block;
+    height: 2222px;
 }
-.textInside{
-    background-color: aqua;
-    margin: 5px;
+
+.about-company{
+    position: relative;
+    top: 160px;
+    left: 108px;
+
+    width: 600px;
+    height: 220px; 
 }
-.textOutside{
-    max-width: 90%;
-    width: 100%;
-    background-color: brown;
-    margin: 2%;
+
+.company-description h1{
+    color: #101828;  
+    font-size: 36px;
+    font-family: "Inter",Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
+    width: 550px;
 }
-.footer{
-    background-color: brown;
-    margin: 5px;
-    width: 99%;
+
+.company-description span{
+    color: #306FF5;  
+    font-family: "Inter",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
 }
-.footerInside{
-    display: inline-block;
-    background-color: aqua;
-    margin: 5px;
-    width: 23%;
+
+.company-description p{
+    color: #101828;  
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+    width: 550px;
+}
+
+.contact-info{
+    position: relative;
+    top: 30px;
+    
+    width: 676px;
+    height: 186px;  
+    background-color: white;
+    border-radius: 12px; 
+}
+
+.contact-info h2{
+    font-family: "Inter",Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.3799999952316284px;
+    text-align: left;
+    width: 500px;
+    color:#101828;
+
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+
+.contact-form{
+    display: grid;
+    grid-template-columns: repeat(3, 250px); 
+    grid-template-rows: auto;
+    position: relative;
+    left: 20px;
+    top: 40px;
+}
+.contact-form div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
+}
+
+.contact-form label{
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+}
+
+.contact-form input{
+    border-style: none;
+    font-family: "SF Pro",Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+}
+
+.contact-form input[type='tel'], .contact-form input[type='text']{
+    margin-top: 10px;
+    border-bottom: 1px solid #D0D5DD;
+}
+
+.contact-form input[type='submit']{
+    background-color: #2D66EE;
+    color: white;
+    font-size: 12px;
+    width: 132px;
+    height:58px;
+
+    border-radius: 8px;
+    padding: 11px 24px;
+}
+
+.about-company img{
+    position: relative;
+
+    z-index: -1;
+
+    top: -600px;
+    left: 520px;
 }
