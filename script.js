@@ -135,7 +135,6 @@ function init()
                     elParent+= this.renderChildren(item.name);
             });
 
-            // нужно, чтобы закрыть два div сверху после добавление всех вложенных элементов
             elParent += '</div> </div>';
             return elParent
         }
