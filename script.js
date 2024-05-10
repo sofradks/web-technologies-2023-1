@@ -3,15 +3,15 @@ class Topping{
     constructor(name, smallPrice, smallCalories, bigPrice, bigCalories){
         this.name = name;
         this.smallPrice = smallPrice;
-        this.smallCalories = smallCalories;
         this.bigPrice = bigPrice;
+        this.smallCalories = smallCalories;
         this.bigCalories = bigCalories;
     }
 }
 
 class Pizza {
-    constructor(stuff, price, calories, size){
-        this.stuff = stuff;
+    constructor(name, price, calories, size){
+        this.name = name;
         this.price = price;
         this.calories = calories;
         this.size = size;
@@ -23,53 +23,29 @@ class Pizza {
             this.toppings.push(topping);
             return;
         }
-        console.log("Это не добавка!")
+        console.log("Такой добавки быть не может")
     }
 
     removeTopping(topping){
-        //плохая идея, остается пустой элемент
-        // const index = this.toppings.findIndex(e => e == topping);
-        // delete this.toppings[index];
-
-        //плохая идея №2, удаляются все добавки одного вида(мб можно использовать 2х добавки, не написано)
-        //this.toppings = this.toppings.filter(element => element !== topping)
-        
-        //система боль, но работает
-        // const index = this.toppings.findIndex(e => e == topping);
-        // if(index == -1){
-        //     return;
-        // }
-
-        // let array = new Array();
-
-        // for(let i = 0; i < this.toppings.length; i++){
-        //     if(i != index){
-        //         array.push(this.toppings[i]);
-        //     }   
-        // }
-
-        // this.toppings = array;
         const index = this.toppings.findIndex(e => e == topping);
         this.toppings.splice(index, 1);
     }
 
     getToppings(){
-        return this.toppings.map(element =>
-            element.name
-        );
+        return this.toppings.map(element => element.name);
     }
 
     getSize(){
         return this.size;
     }
 
-    getStuffing(){
-        return this.stuff;
+    getName(){
+        return this.name;
     }
 
     calculatePrice(){
         let result = this.price;
-        this.toppings.forEach(element =>{
+        this.toppings.forEach(element => {
             if (this.size == "Большая"){
                 result += element.bigPrice;
             }
@@ -94,7 +70,7 @@ class Pizza {
     }
 }
 
-class Margherita extends Pizza{
+class Margaritta extends Pizza{
     constructor(size){
         if (size == "Большая"){
             super("Маргарита", 700, 500, size)
@@ -140,24 +116,30 @@ const Size = {
     Big:"Большая",
     Small:"Маленькая"
 }
-let margPizza = new Margherita(Size.Big);
-let bavarianPizza = new Bavarian(Size.Small);
+let margaritta = new Margaritta(Size.Small);
+let pepperoni = new Pepperoni(Size.Big);
 
-let array = [margPizza, bavarianPizza]
-let toppingCheeseBoard = new Topping("Сырный борт", 50, 20, 100, 40);
+let array = [margaritta, pepperoni]
+
 let toppingCreamyMozzarella = new Topping("Сливочная моцарелла", 50, 20, 100, 50);
+let toppingCheeseBoard = new Topping("Сырный борт", 50, 20, 100, 40);
 let toppingCheddarParmesan = new Topping("Чедер и пармезан", 150, 50, 300, 100);
-const pizzaTest = new Pizza("Не число", "Не число" , "Не число", "Не число","Не число")
-margPizza.addTopping(toppingCheddarParmesan);
-margPizza.addTopping(toppingCheeseBoard);
-margPizza.addTopping("Не добавка");
-margPizza.removeTopping(toppingCheddarParmesan);
-const container = document.getElementById("container");
+
+margaritta.addTopping(toppingCheddarParmesan);
 
 
 
-let rez = "";
+
+let result = "";
 for (const element of array){
-    rez = `${rez}<div>Пицца: ${element.getStuffing()} Цена: ${element.calculatePrice()} Добавки: ${element.getToppings()}</div>` 
+    let toppings = ""
+    let a = element.getToppings();
+    if (a == ""){
+        toppings  = "-";
+    }
+    else {
+        toppings = a;
+    }
+    result = `$Пицца: ${element.getName()} Размер: ${element.size} Добавки: ${toppings} Цена: ${element.calculatePrice()} Калории: ${element.calculateCalories()}`
+    console.log(result)
 }
-container.innerHTML = `<div>${rez}</div>`
