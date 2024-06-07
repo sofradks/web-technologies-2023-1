@@ -1,126 +1,103 @@
-<?php
-// Задание 1
-$a = 4;
-$b = -7;
-
-function calculate($a, $b) {
-    if ($a >= 0 && $b >= 0) {
-        return $a - $b;
-    } elseif ($a < 0 && $b < 0) {
-        return $a * $b;
-    } else {
-        return $a + $b;
-    }
-}
-
-$result1 = calculate($a, $b);
-echo ("<p><b>Задание 1</b></p>" . "<p>Результат = " . $result1 . "</p>");
-
-// Задание 2
-$a = rand(0, 15); 
-$result2 = "";
-
-switch ($a) {
-    case 0:
-        $result2 .= "0, ";
-    case 1:
-        $result2 .= "1, ";
-    case 2:
-        $result2 .= "2, ";
-    case 3:
-        $result2 .= "3, ";
-    case 4:
-        $result2 .= "4, ";
-    case 5:
-        $result2 .= "5, ";
-    case 6:
-        $result2 .= "6, ";
-    case 7:
-        $result2 .= "7, ";
-    case 8:
-        $result2 .= "8, ";
-    case 9:
-        $result2 .= "9, ";
-    case 10:
-        $result2 .= "10, ";
-    case 11:
-        $result2 .= "11, ";
-    case 12:
-        $result2 .= "12, ";
-    case 13:
-        $result2 .= "13, ";
-    case 14:
-        $result2 .= "14, ";
-    case 15:
-        $result2 .= "15, ";
-}
-
-$result2 = rtrim($result2, ", ");
-echo ("<p><b>Задание 2</b></p>" . "<p>Результат = " . $result2 . "</p>");
-
-
-//Задание 3
-function plus($a, $b) {
-    return $a + $b;
-}
-
-function umn($a, $b) {
-    return $a * $b;
-}
-
-function minus($a, $b) {
-    return $a - $b;
-}
-
-function del($a, $b) {
-    return $a / $b;
-}
-
-echo ("<p><b>Задание 3</b></p>" .
-"<p>4 + 7 = " . plus(4, 7) . "</p>" .
-"<p>4 - 7 = " . minus(4, 7) . "</p>" .
-"<p>4 * 7 = " . umn(4, 7) . "</p>" .
-"<p>4 / 7 = " . del(4, 7) . "</p>");
-
-//Задание 4
-function mathOperation($arg1, $arg2, $operation) {
-    switch ($operation) {
-        case '+':
-            return plus($arg1, $arg2);
-        case '-':
-            return minus($arg1, $arg2);
-        case '*':
-            return umn($arg1, $arg2);
-        case '/':
-            return del($arg1, $arg2);
-        default:
-            return 0;
-    }
-}
-echo ("<p><b>Задание 4</b></p>" .
-"<p>Сумма чисел 4 и 7 = " . mathOperation(4, 7, "+") . "</p>");
-
-//Задание 6
-function power($val, $pow) {
-    if ($pow == 0) {
-        return 1;
-    } elseif ($pow < 0) {
-        return 1 / power($val, -$pow);
-    } else {
-        return $val * power($val, $pow - 1);
-    }
-}
-echo ("<p><b>Задание 6</b></p>" .
-"<p>Число 4 в 7 степени = " . power(4, 7) . "</p>");
-?>
-
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>lesson17</title>
+    <title>lesson18</title>
 </head>
 <body>
+<?php
+// Функция для вывода чисел с указанием их типа
+function showInterval($startValue, $endValue)
+{
+    if ($startValue > $endValue)
+        exit("Неправильный интервал!");
+    do {
+        $type = ($startValue == 0) ? "это ноль" : (($startValue % 2 == 0) ? "четное число" : "нечетное число");
+        echo "<p>$startValue –  $type.</p>";
+        $startValue++;
+    } while ($startValue <= $endValue);
+}
 
+echo "<h2>Задание 1</h2>";
+showInterval(0, 10);
+
+echo "<h2>Задание 2</h2>";
+$localities = [
+    'Московская область' => ['Москва', 'Зеленоград', 'Клин'],
+    'Ленинградская область' => ['Санкт-Петербург', 'Всеволожск', 'Павловск', 'Кронштадт'],
+    'Рязанская область' => ['Рязань', 'Касимов', 'Шацк', 'Ряжск']
+];
+foreach ($localities as $region => $cities) {
+    echo "<p>$region:</p>";
+    echo "<p>" . implode(', ', $cities) . "</p>";
+}
+
+echo "<h2>Задание 3</h2>";
+function transliterate($string)
+{
+    $translit = [
+        'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'yo',
+        'ж' => 'zh', 'з' => 'z', 'и' => 'i', 'й' => 'y', 'к' => 'k', 'л' => 'l', 'м' => 'm',
+        'н' => 'n', 'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u',
+        'ф' => 'f', 'х' => 'kh', 'ц' => 'ts', 'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sch', 'ъ' => '',
+        'ы' => 'y', 'ь' => '', 'э' => 'e', 'ю' => 'yu', 'я' => 'ya'
+    ];
+    $transliterated = '';
+    $string = mb_strtolower($string, 'UTF-8');
+    for ($i = 0; $i < mb_strlen($string, 'UTF-8'); $i++) {
+        $symbol = mb_substr($string, $i, 1, 'UTF-8');
+        if (array_key_exists($symbol, $translit)) {
+            $transliterated .= $translit[$symbol];
+        } else {
+            $transliterated .= $symbol;
+        }
+    }
+    return $transliterated;
+}
+
+$russian_word = "вставить текст - текст";
+$translit_result = transliterate($russian_word);
+echo "<p>$translit_result</p>";
+
+echo "<h2>Задание 4</h2>";
+function renderMenu($menu)
+{
+    $output = '<ul>';
+    foreach ($menu as $item) {
+        $output .= '<li>' . $item['name'];
+        if ($item['hasChildren']) {
+            $output .= renderMenu($item['items']);
+        }
+        $output .= '</li>';
+    }
+    $output .= '</ul>';
+    return $output;
+}
+
+$menu = [
+    ['name' => 'Уровни меню', 'hasChildren' => true, 'items' => [
+        ['name' => 'Первый уровень', 'hasChildren' => true, 'items' => [
+            ['name' => 'Второй уровень', 'hasChildren' => false, 'items' => []],
+            ['name' => 'Второй уровень', 'hasChildren' => true, 'items' => [
+                ['name' => 'Третий уровень', 'hasChildren' => false, 'items' => []],
+                ['name' => 'Третий уровень', 'hasChildren' => false, 'items' => []]
+            ]]
+        ]],
+        ['name' => 'Первый уровень', 'hasChildren' => false, 'items' => []]
+    ]]
+];
+echo renderMenu($menu);
+
+echo "<h2>Задание 6</h2>";
+foreach ($localities as $region => $cities) {
+    $citiesWithK = array_filter($cities, function ($city) {
+        return mb_substr(mb_strtolower($city), 0, 1) === 'к';
+    });
+    if (!empty($citiesWithK)) {
+        echo "<p>$region:</p>";
+        echo "<p>" . implode(', ', $citiesWithK) . "</p>";
+    }
+}
+?>
 </body>
 </html>
